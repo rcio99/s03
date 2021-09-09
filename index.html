@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Introducción a la programación para el Diseño de interacción </title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1>Rocío Córdova</h1>
+        </header>
+        <main>
+            <p>Soy estudiante de tercer año de Diseño en Visualidad y Medios de la U. Chile, y tome el electivo porque el semestre pasado aprendí de programación y me gustó, aunque no sabía bien de que trataba este electivo específicamente.</p>
+        </main>     
+        <footer>
+                <div id="next"></div>
+                <div><a href="page.html?dibuja="></a></div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+        <script>
+            var alternativas = ["un dragón", "un unicornio", "un hada","una sirena", "una bruja"];
+            function setup() {
+                var lugar = select("footer");
+                var alternativa = random(alternativas);
+                createA("page.html?dibuja="+alternativa, "Dibuja "  + alternativa).parent(lugar);
+                noCanvas();
+            }
+        </script>
+    </body>
+</html>
